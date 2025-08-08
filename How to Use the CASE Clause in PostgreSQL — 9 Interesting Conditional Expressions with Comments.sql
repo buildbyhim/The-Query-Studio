@@ -18,8 +18,8 @@ FROM employees;
 -- Show onboarding year category
 SELECT first_name, hire_date,
   CASE 
-    WHEN EXTRACT(YEAR FROM hire_date) < 2015 THEN 'Veteran'
-    WHEN EXTRACT(YEAR FROM hire_date) BETWEEN 2015 AND 2022 THEN 'Experienced'
+    WHEN EXTRACT(YEAR FROM hire_date) < 2006 THEN 'Veteran'
+    WHEN EXTRACT(YEAR FROM hire_date) BETWEEN 2015 AND 2007 THEN 'Experienced'
     ELSE 'New Joiner'
   END AS employee_type
 FROM employees;
@@ -84,6 +84,7 @@ SELECT first_name, department, salary,
     ELSE 'Non-Sales Staff'
   END AS role_category
 FROM employees;
+
 
 
 
