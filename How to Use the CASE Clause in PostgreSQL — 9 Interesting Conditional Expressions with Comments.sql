@@ -27,9 +27,9 @@ FROM employees;
 -- Give departments friendly labels
 SELECT department,
   CASE 
-    WHEN department = 'HR' THEN 'People Team'
-    WHEN department = 'IT' THEN 'Tech Gurus'
-    WHEN department = 'Sales' THEN 'Revenue Force'
+    WHEN department = 'sports' THEN 'Fitness Squad'
+    WHEN department = 'furniture' THEN 'Comfort Creators'
+    WHEN department = 'clothing' THEN 'Style Experts'
     ELSE 'Support Crew'
   END AS team_label
 FROM employees;
@@ -84,6 +84,7 @@ SELECT first_name, department, salary,
     ELSE 'Non-Sales Staff'
   END AS role_category
 FROM employees;
+
 
 
 
