@@ -88,6 +88,23 @@ ORDER BY CASE
              ELSE 5
          END;
 
+-- Select employees with 'Medium' salary (100,000–150,000) after classifying salaries into Low, Medium, and High
+WITH employees AS (
+    SELECT *, 
+           CASE 
+                WHEN salary < 100000 THEN 'Low'
+                WHEN salary BETWEEN 100000 AND 150000 THEN 'Medium'
+                ELSE 'High'
+           END AS sal_payments_status
+    FROM employees 
+    INNER JOIN regions
+        ON employees.region_id = regions.region_id
+)
+SELECT *
+FROM employees
+WHERE sal_payments_status = 'Medium';
+
+
 
 
 
